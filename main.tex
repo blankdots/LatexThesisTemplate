@@ -1,0 +1,136 @@
+% -*- Mode:TeX -*-
+%% Stefan Negru -- blankdots.com -- An adaption of MIT Thesis format fo
+%% Faculty of Computer Science, Alexandru Ioan Cuza University
+
+%% IMPORTANT: The official MIT thesis specifications are available at:
+%%            http://libraries.mit.edu/archives/thesis-specs/
+%%
+%%            Please verify your thesis' formatting and copyright
+%%            assignment before submission. 
+
+%% The documentclass options along with the pagestyle can be used to generate
+%% a technical report, a draft copy, or a regular thesis.  You may need to
+%% re-specify the pagestyle after you \include  cover.tex.  For more
+%% information, see the first few lines of mitthesis.cls. 
+
+%\documentclass[12pt,vi,twoside]{mitthesis}
+%%
+%%  If you want your thesis copyright to you instead of MIT, use the
+%%  ``vi'' option, as above.
+%%
+%\documentclass[12pt,twoside,leftblank]{mitthesis}
+%%
+%% If you want blank pages before new chapters to be labelled ``This
+%% Page Intentionally Left Blank'', use the ``leftblank'' option, as
+%% above. 
+
+\documentclass[11pt,twoside]{mitthesis}
+\special{papersize=210mm,297mm}
+\usepackage{lgrind}
+
+%%%%%%%%%% BEGIN custom settings to the format %%%%%%%%%% 
+%\usepackage{minitoc} -- does not work with titlesec
+\usepackage{titlesec} % fancy chapter titles and mini ToC
+\usepackage{titletoc}
+% BEGIN generate nice figures with eps files
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+% END generate nice figures with eps files
+\usepackage{array} % defines new options for column alignment like "m{width}"
+\usepackage{url} % URL package
+\usepackage[backref=page]{hyperref} %package for references; PRO TIP: use \autoref
+\usepackage[hypcap]{caption}
+\usepackage{amsthm, amsfonts, amsmath, amssymb} % math, definitions stuff
+\usepackage[nottoc]{tocbibind} % disable inclusion of ToC in ToC; notbib disables bibliography in ToC
+\usepackage{listings} % for source code listing
+\usepackage{enumitem}
+\usepackage{emptypage} %clear empty pages from page numbering
+\usepackage{wrapfig} % for inline image placement
+%\usepackage{paralist} % for inline enumeration
+
+\RequirePackage[absolute]{textpos}
+
+% Uncomment to set hyperef colors in the pdf for digital document
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=red, pdfborder={0 0 0}}
+
+% Uncomment to set hyperef colors for print format
+%\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black, citecolor=black, pdfborder={0 0 0}}
+
+% set back references in the bibliography to see on which page that specific reference was cited
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{%
+    \ifcase #1 (Not cited.)%
+    \or        (Cited on page~#2.)%
+    \else      (Cited on pages~#2.)%
+    \fi}
+
+%---- For theorems, definitions and examples
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{exercise}[theorem]{Exercise}
+
+%----correct case for autoref from hyperref
+\renewcommand*{\chapterautorefname}{Chapter}
+\renewcommand*{\sectionautorefname}{Section}%
+\providecommand*{\lstnumberautorefname}{Listing}
+\newcommand{\exampleautorefname}{Example}
+\newcommand{\definitionautorefname}{Definition}
+
+% Formatting for Chapter Titles and beginning of Chapters
+%----\RequirePackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\normalfont\Large\raggedleft}
+  {\MakeUppercase{\chaptertitlename}%
+    \rlap{ \resizebox{!}{1.2cm}{\thechapter} \rule{15cm}{1.2cm}}}
+  {7pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{30pt}{20pt}
+
+\AtBeginDocument{\renewcommand\contentsname{Table of Contents}}
+
+%---- pagestyle header for pagenumber and chapter title
+\newpagestyle{special}{
+  \headrule
+  \sethead[\small{\usepage}][\small{\chaptertitle}]
+	     []{}{\small{\chaptertitle}}{\small{\usepage}}
+}
+
+%---- fix for conflict with minitoc; creating partial TOC for each chapter
+
+\newcommand{\PartialToc}{\vspace*{1pc}\vbox{\bf\Large Contents\vspace*{1pc}}%
+\startcontents[chapters]\hrule\vspace*{1pc}
+\printcontents[chapters]{}{1}{\setcounter{tocdepth}{1}}\vspace*{1pc}\hrule\vspace*{1pc}}
+
+\lstset{basicstyle=\small\ttfamily,breaklines=true} %listing monospace font formating
+
+%%%%%%%%%% END custom settings to the format %%%%%%%%%% 
+
+\def\all{all}
+
+\begin{document}
+
+\pagestyle{plain}
+
+\include{cover}
+
+\pagenumbering{roman} % roman page numbering system
+\include{contents} % table of contents, list of figures, list of tables
+\include{articles} % list of publications and personal contributions
+
+\include{declarations} % declarations for Romanian students -- remove if not needed
+
+\pagenumbering{arabic} % arabic page numbering system
+\pagestyle{special}
+
+\include{chap1} %chapter 1
+\include{chap2} %chapter 2
+
+\pagestyle{plain}
+\appendix
+\include{appa} % appendix
+\include{biblio}
+\end{document}
+

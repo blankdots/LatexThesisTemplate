@@ -1,0 +1,67 @@
+%% Stefan Negru -- blankdots.com -- An adaption of MIT Thesis format fo
+%% Faculty of Computer Science, Alexandru Ioan Cuza University
+
+\chapter{Appendix Example}
+\label{chap:AppendixA}
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1}
+\caption{OWL DL descriptions, data ranges, properties, individuals, and data values; content adapted from \cite{Baader2003}.}
+\begin{tabular}{|p{10cm}|p{5cm}|}
+	\multicolumn{1}{l}{\textbf{Abstract Syntax}}
+	& \multicolumn{1}{l}{\textbf{DL Syntax}}\\
+			\hline 
+			Descriptions ($C$) & {}\\
+			\hline
+			A & A\\
+			owl:Thing & $\top$\\
+			owl:Nothing & $\bot$\\
+		 \hline
+			intersectionOf $(C_{1}\ldots C_{n})$ & $C_{1}\sqcap \cdots \sqcap C_{n}$ \\
+			unionOf $(C_{1}\ldots C_{n})$ & $C_{1}\sqcup \cdots \sqcup C_{n}$ \\
+			complementOf $(C)$ & $\neg C$\\
+			oneOf $(o_{1} \ldots o_{n})$ & $\{o_{1}\} \sqcup \cdots \sqcup \{o_{n}\}$\\
+			\hline
+			restriction ($R$ someValuesFrom $(C)$) & $\exists R.C$ \\
+			restriction ($R$ allValuesFrom $(C)$) & $\forall R.C$ \\
+			restriction ($R$ hasValue $(o)$) & $R:o$ \\
+			restriction ($R$ minCardinality $(n)$) & $\ge n$ $R$ \\
+			restriction ($R$ maxCardinality $(n)$) & $\le n$ $R$ \\
+			\hline
+			restriction ($U$ someValuesFrom $(C)$) & $\exists U.C$ \\
+			restriction ($U$ allValuesFrom $(C)$) & $\forall U.C$ \\
+			restriction ($U$ hasValue $(v)$) & $U:v$ \\
+			restriction ($U$ minCardinality $(n)$) & $\ge n$ $U$ \\
+			restriction ($U$ maxCardinality $(n)$) & $\le n$ $U$ \\
+			\hline
+			\hline
+			Data Ranges ($D$) & {}\\
+			\hline
+			D & D\\
+			oneOf $(v_{1} \cdots v_{n})$ & $\{o_{1}\} \sqcup \cdots \sqcup \{v_{n}\}$\\
+			\hline
+			Object Properties($R$) & {}\\
+			\hline
+			R & R\\
+			inv$(R)$ & $R^{-}$\\
+			\hline
+			\hline
+			Datatype Properties($U$) & {}\\
+			\hline
+			U & U\\
+			\hline
+			\hline
+			Individuals($o$) & {}\\
+			\hline
+			o & o\\
+			\hline
+			\hline
+			Data Values($v$) & {}\\
+			\hline
+			v & v\\
+			\hline
+		\end{tabular}
+\label{tab:OWLvsDL}
+\end{table}
+
