@@ -1,4 +1,4 @@
-## LaTeX Thesis Template ##
+## LaTeX Thesis Template
 
 This template was made for my thesis, but I also intended it to be used by students from Faculty of Computer Science, Alexandru Ioan Cuza University of Iasi, Romania. The template itself is based and adapted from the MIT Thesis format available at http://web.mit.edu/thesis/tex/ .
 
