@@ -47,7 +47,7 @@
 %
 %Revision 1.2  92/04/22  13:12:02  epeisach
 %Fixes for 1991 course 6 requirements
-%Phrase "and to grant others the right to do so" has been added to 
+%Phrase "and to grant others the right to do so" has been added to
 %permission clause
 %Second copy of abstract is not counted as separate pages so numbering works
 %out
@@ -57,7 +57,7 @@
 
 %
 % LaTeX format for theses at MIT
-% Based on "Specifications for Thesis Preparation" 
+% Based on "Specifications for Thesis Preparation"
 
 % `vi' and `upcase' options by Krishna Sethuraman - krishna@athena.mit.edu
 % Margins and heading types by Peter Nuth  - nuth@ai.mit.edu
@@ -70,7 +70,7 @@
 %	\documentclass[12pt]{mitthesis}
 %       \pagestyle{plain}
 %%%% New options:
-% 
+%
 % Option `twoside':
 %   Good for producing Tech Reports.
 %   The default is single-sided printing, which is what M.I.T. wants on the
@@ -84,7 +84,7 @@
 % 	Note that MIT does not REQUIRE all theses to be double-spaced anymore.
 % 	Someone in the library system said that it's OK to be single-spaced.
 % 	(Regardless of what the specs. say...)
-%   To get singlespacing in an area - Use  the 'singlespace' environment. 
+%   To get singlespacing in an area - Use  the 'singlespace' environment.
 %
 %
 %%%%%%%%%%
@@ -131,9 +131,9 @@
 %	    Abstract goes here.
 %	\end{abstractpage}
 %
-%%%%%%%% Newer additions 
+%%%%%%%% Newer additions
 %
-% documentclass options - 
+% documentclass options -
 % vi		For MIT course VI or VIII thesis - will copyright the thesis to
 % 		you while giving MIT permission to copy and distribute it.
 % upcase	Will put much of the cover page in uppercase, as per the
@@ -142,7 +142,7 @@
 % Also added ``All Rights Reserved'' to default copyright notice.
 %
 %%%%%%%%%%%
-% 
+%
 % Documentclass options (vi and upcase) and changes to copyright notice
 %	Copyright (c) 1990, by Krishna Sethuraman.
 %
@@ -154,7 +154,7 @@
 % Permission to copy all or part of this work is granted, provided
 % that the copies are not made or distributed for resale, and that
 % the copyright notice and this notice are retained.
-% 
+%
 % THIS WORK IS PROVIDED ON AN "AS IS" BASIS.  THE AUTHOR PROVIDES NO
 % WARRANTY WHATSOEVER, EITHER EXPRESS OR IMPLIED, REGARDING THE WORK,
 % INCLUDING WARRANTIES WITH RESPECT TO ITS MERCHANTABILITY OR FITNESS
@@ -169,7 +169,7 @@
 				% So we do not read this style twice
 \DeclareOption{singlespace}{		% If he explicitly wants single spacing
     \typeout{Single spaced}
-    \def\mystretch{1}}	
+    \def\mystretch{1}}
 
 %% `vi' and `upcase' document style options.  Krishna Sethuraman (1990)
 \newcount\vithesis
@@ -200,7 +200,7 @@
 % with 2e.  setspace is a replacement which is 2e-compliant.
 
 % Read the doublespace style that we got from Rochester:
-%\input setdoublespace.sty 		
+%\input setdoublespace.sty
 
 \def\baselinestretch{\mystretch}	% Double spacing hack
 
@@ -211,7 +211,7 @@
 %	into 1in margin.
 %  Draft mode brings the header back down.
 
-\setlength{\oddsidemargin}{0.25in}	% 1.25in left margin 
+\setlength{\oddsidemargin}{0.25in}	% 1.25in left margin
 \setlength{\evensidemargin}{0.25in}	% 1.25in left margin (even pages)
 \setlength{\topmargin}{0.0in}		% 1in top margin
 \setlength{\textwidth}{6.0in}		% 6.0in text - 1.25in rt margin
@@ -223,8 +223,8 @@
 % We only need them in page styles that USE headers and footers.
     % If we have a header, it must be 1in from top of page.
 \def\pulldownheader{			% Shift header down 1in from top
-    \addtolength{\topmargin}{\headheight}	
-    \addtolength{\topmargin}{\headsep}	
+    \addtolength{\topmargin}{\headheight}
+    \addtolength{\topmargin}{\headsep}
     \addtolength{\textheight}{-\headheight}
     \addtolength{\textheight}{-\headsep}
 }
@@ -241,7 +241,7 @@
 
 
 % I redefine these formats that were defined in report.sty
-% Definition of 'headings' page style 
+% Definition of 'headings' page style
 %  Note the use of ##1 for parameter of \def\chaptermark inside the
 %  \def\ps@headings.
 %
@@ -253,7 +253,7 @@
     \def\@evenhead{\rm \thepage\hfil \sl \leftmark}	% Left heading.
     \def\@oddhead{\hbox{}\sl \rightmark \hfil \rm\thepage}	% Right heading.
     \def\chaptermark##1{\markboth {\uppercase{\ifnum \c@secnumdepth >\m@ne
-	\@chapapp\ \thechapter. \ \fi ##1}}{}}	
+	\@chapapp\ \thechapter. \ \fi ##1}}{}}
     \def\sectionmark##1{\markright {\uppercase{\ifnum \c@secnumdepth >\z@
 	\thesection. \ \fi ##1}}}
     \pulldownheader				% Bring header down from edge
@@ -269,7 +269,7 @@
 }
 \fi
 
-% Redefinition of 'myheadings' page style.  
+% Redefinition of 'myheadings' page style.
 %
 \def\ps@myheadings{\let\@mkboth\@gobbletwo
     \def\@oddfoot{}
@@ -279,7 +279,7 @@
     \def\@evenhead{\rm \thepage\hfil\sl\leftmark\hbox {}}	%
     \def\@oddhead{\hbox{}\sl\rightmark \hfil \rm\thepage}	%
     \pulldownheader				% Bring header down from edge
-}						
+}
 
 % Redefine '/chapter' to always start on an odd page.
 % Should make no difference in singleside mode.
@@ -324,7 +324,7 @@
 
 % blankdots: The copyright notice stuff is a tremendous mess. --- this was modified
 % \title and \author already exist
-% define previous degrees (not necessary), department, month, year and supervisor 
+% define previous degrees (not necessary), department, month, year and supervisor
 
 \def\supervisor#1{\gdef\@supervisor{#1}}
 
@@ -365,7 +365,7 @@
 \begin{minipage}{0.4\textwidth}
   \begin{flushleft} \large
   \normalsize \emph{Author:}\\
-    {\normalsize \bf \choosecase{\@author}} 
+    {\normalsize \bf \choosecase{\@author}}
   \end{flushleft}
 \end{minipage}
 \begin{minipage}{0.4\textwidth}
@@ -402,7 +402,7 @@
 %% page.
 %% Krishna Sethuraman (1990)
 \def\endabstractpage{\end{abstract}\noindent
-% \unvcopy\@abstractsupervisor 
+% \unvcopy\@abstractsupervisor
  \newpage}
 
 %% This counter is used to save the page number for the second copy of
@@ -423,7 +423,3 @@
 
 \def\abstract{\subsection*{Abstract}\small\def\baselinestretch{1}\@normalsize}
 \def\endabstract{\par}
-
-
-
-
