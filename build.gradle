@@ -1,6 +1,5 @@
 buildscript {
     repositories {
-        mavenLocal()
         mavenCentral()
     }
     dependencies {
@@ -11,6 +10,6 @@ buildscript {
 apply plugin: 'latex'
 
 latex {
-    // doc3.tex, refs.bib -> doc3.pdf
+    // main.tex, main.bib -> main.pdf
     tex tex:'main.tex', bib:'main.bib'
 }
