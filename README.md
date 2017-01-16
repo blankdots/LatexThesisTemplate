@@ -25,7 +25,7 @@ Execute the following commands to build the main.pdf file:
 
 #### building with Gradle
 
-Uses the following plugin
+Uses the following plugin: https://github.com/csabasulyok/gradle-latex
 
 Build all PDFs with associated bibliography:
 ```
