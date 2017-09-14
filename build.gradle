@@ -36,7 +36,7 @@ release {
     newVersionCommitMessage = '[Gradle Release Plugin] - new version commit: '
     tagTemplate = '${version}'
     // versionPropertyFile = 'gradle.properties'
-    versionProperties = []
+    // versionProperties = []
     buildTasks = ['build']
     scmAdapters = [
         net.researchgate.release.GitAdapter
