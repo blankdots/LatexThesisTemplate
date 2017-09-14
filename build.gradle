@@ -34,10 +34,10 @@ release {
     // preTagCommitMessage = '[Gradle Release Plugin] - pre tag commit: '
     tagCommitMessage = '[Gradle Release Plugin] - creating tag: '
     newVersionCommitMessage = '[Gradle Release Plugin] - new version commit: '
-    tagTemplate = '${version}'
+    // tagTemplate = '${version}'
     // versionPropertyFile = 'gradle.properties'
     // versionProperties = []
-    buildTasks = ['build']
+    // buildTasks = ['build']
     scmAdapters = [
         net.researchgate.release.GitAdapter
     ]
