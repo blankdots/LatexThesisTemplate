@@ -21,7 +21,7 @@ latex {
 
 version = "0.2.0"
 
-build.dependsOn latex
+// build.dependsOn latex
 
 release {
     failOnCommitNeeded = true
