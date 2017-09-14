@@ -19,6 +19,8 @@ latex {
     tex tex:'main.tex', bib:'main.bib'
 }
 
+version = "0.2.0"
+
 build.dependsOn latex
 
 release {
