@@ -7,9 +7,44 @@ buildscript {
     }
 }
 
+plugins {
+  id 'net.researchgate.release' version '2.6.0'
+}
+
+apply plugin: 'base'
 apply plugin: 'latex'
 
 latex {
     // main.tex, main.bib -> main.pdf
     tex tex:'main.tex', bib:'main.bib'
+}
+
+build.dependsOn latex
+
+release {
+    failOnCommitNeeded = true
+    failOnPublishNeeded = true
+    failOnSnapshotDependencies = true
+    failOnUnversionedFiles = true
+    failOnUpdateNeeded = true
+    revertOnFail = true
+    preCommitText = ''
+    preTagCommitMessage = '[Gradle Release Plugin] - pre tag commit: '
+    tagCommitMessage = '[Gradle Release Plugin] - creating tag: '
+    newVersionCommitMessage = '[Gradle Release Plugin] - new version commit: '
+    tagTemplate = '${version}'
+    versionPropertyFile = 'gradle.properties'
+    versionProperties = []
+    buildTasks = ['build']
+    scmAdapters = [
+        net.researchgate.release.GitAdapter
+    ]
+
+    git {
+        requireBranch = 'master'
+        pushToRemote = 'origin'
+        pushToBranchPrefix = ''
+        commitVersionFileOnly = false
+        signTag = false
+    }
 }
