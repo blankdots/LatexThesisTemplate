@@ -19,7 +19,7 @@ latex {
     tex tex:'main.tex', bib:'main.bib'
 }
 
-version = "0.2.1"
+version = "0.2.2"
 
 // build.dependsOn latex
 
