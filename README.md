@@ -14,7 +14,7 @@ In order to work with LaTeX and this template a specialised software could be us
 
 ### Building the template
 
-In order to build the template you require one of the software above or [Gradle](https://gradle.org/) or pdflatex and bibtex command:
+In order to build the template you require one of the software above or pdflatex and bibtex command:
 
 #### pdflatex and bibtex
 
@@ -23,21 +23,3 @@ Execute the following commands to build the main.pdf file:
 * `bibtex main` - will generate the necessary files for building the references
 * `pdflatex main.tex` - will generate the complete `main.pdf` file
 
-#### building with Gradle
-
-Uses the following plugin: https://github.com/csabasulyok/gradle-latex
-
-Build all PDFs with associated bibliography:
-```
->./gradlew pdfLatex
-```
-
-Clean output and auxiliary files:
-```
->./gradlew cleanLatex
-```
-
-Use [continuous build ](https://docs.gradle.org/current/userguide/continuous_build.html) (will block and watch file changes):
-```
->./gradlew -t pdfLatex
-```
