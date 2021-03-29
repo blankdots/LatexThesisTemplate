@@ -1,6 +1,6 @@
 ## LaTeX Thesis Template
 
-This template was made for a PHD thesis, but it is also intended it to be used by students from mostly from [Faculty of Computer Science, Alexandru Ioan Cuza University of Iasi, Romania](www.info.uaic.ro).
+This template was made for a PHD thesis, but it is also intended it to be used by students from mostly from [Faculty of Computer Science, Alexandru Ioan Cuza University of Iasi, Romania](https://www.info.uaic.ro).
 The template itself is based and adapted from the MIT Thesis format available at http://web.mit.edu/thesis/tex/ .
 
 Students should also consult: http://profs.info.uaic.ro/~mdiac/other/licenta2010/ghid_licenta2010.pdf .
