@@ -1,89 +1,39 @@
-%% Stefan Negru -- blankdots.com -- An adaption of MIT Thesis format for
-%% Faculty of Computer Science, Alexandru Ioan Cuza University
-% -*-latex-*-
+%% Stefan Negru -- blankdots.com -- Adaptation of MIT Thesis format for
+%% Faculty of Computer Science, Alexandru Ioan Cuza University of Iasi, Romania
+%% Uses the MIT thesis template (mitthesis) from https://ctan.org/pkg/mitthesis
+
+% Affiliation logo on title page (use .pdf if you run epstopdf on the .eps)
+\AffiliationLogo{\centering\IfFileExists{figures/cover_affiliation.pdf}{\includegraphics[width=15cm]{figures/cover_affiliation.pdf}}{\includegraphics[width=15cm]{figures/cover_affiliation.eps}}}
+
+% Institution name on title page (replaces default "Massachusetts Institute of Technology")
+\Institution{Faculty of Computer Science, Alexandru Ioan Cuza University}
 
 \title{Thesis Title}
 
-\author{FirstName LastName}
-% If you wish to list your previous degrees on the cover page, use the
-% previous degrees command:
-%       \prevdegrees{B.Sc., Faculty of Computer Science (2008)}
-% You can use the \\ command to list multiple previous degrees
-%       \prevdegrees{M.Sc., Faculty of Computer Science (2010)}
-\department{Faculty of Computer Science}
+% \Author{Full Name}{Department}[Previous degree 1][Previous degree 2]...
+% Omit the optional arguments if you do not wish to list previous degrees on the cover.
+\Author{FirstName LastName}{Faculty of Computer Science}
+% Example with previous degrees:
+% \Author{FirstName LastName}{Faculty of Computer Science}[B.Sc., Faculty of Computer Science (2008)][M.Sc., Faculty of Computer Science (2010)]
 
-% If the thesis is for two degrees simultaneously, list them both
-% separated by \and like this:
-% \degree{Doctor of Philosophy \and Master of Science}
-\degree{Bachelor/Master/Philosophiae Doctor}
+% \Degree{Degree name}{Department}
+% For two degrees from one department, use \Degree{Second degree}{} (empty braces for department).
+\Degree{Bachelor/Master/Philosophiae Doctor}{Faculty of Computer Science}
 
-% As of the 2007-08 academic year, valid degree months are September,
-% February, or June.  The default is June.
-\degreemonth{Month}
-\degreeyear{Year}
-\thesisdate{Month DD, Year}
+% Valid degree months: February, May, June, September
+\DegreeDate{June}{2026}
 
-%% By default, the thesis will be copyrighted to MIT.  If you need to copyright
-%% the thesis to yourself, just specify the `vi' documentclass option.  If for
-%% some reason you want to exactly specify the copyright notice text, you can
-%% use the \copyrightnoticetext command.
-%\copyrightnoticetext{\copyright blankdots, 2013. Do not open till Xmas.}
+% Date the thesis is submitted to the department
+\ThesisDate{May 15, 2026}
 
-% If there is more than one supervisor, use the \supervisor command
-% once for each.
-\supervisor{Professor FirstName Lastname}
+% If there is more than one supervisor, use \Supervisor for each.
+% \Supervisor{Name}{Title}[Department]
+\Supervisor{Professor FirstName Lastname}{Professor}[Faculty of Computer Science]
 
-% This is the department committee chairman, not the thesis committee
-% chairman.  You should replace this with your Department's Committee
-% Chairman.
-%\chairman{Arthur C. Smith}{Chairman, Department Committee on Graduate Theses}
+% Graduate officer who accepts theses (required by mitthesis)
+\Acceptor{Chair Name}{Professor}{Graduate Officer, Faculty of Computer Science}
 
-% Make the titlepage based on the above information.  If you need
-% something special and can't use the standard form, you can specify
-% the exact text of the titlepage yourself.  Put it in a titlepage
-% environment and leave blank lines where you want vertical space.
-% The spaces will be adjusted to fill the entire page.  The dotted
-% lines for the signatures are made with the \signature command.
+% Optional: Thesis readers for committee page (omit all to skip auto committee page)
+% \Reader{Reader Name}{Title}{Department}
+
 \maketitle
-
-% The abstractpage environment sets up everything on the page except
-% the text itself.  The title and other header material are put at the
-% top of the page, and the supervisors are listed at the bottom.  A
-% new page is begun both before and after.  Of course, an abstract may
-% be more than one page itself.  If you need more control over the
-% format of the page, you can use the abstract environment, which puts
-% the word "Abstract" at the beginning and single spaces its text.
-
-%% You can either \input (*not* \include) your abstract file, or you can put
-%% the text of the abstract directly between the \begin{abstractpage} and
-%% \end{abstractpage} commands.
-
-% First copy: start a new page, and save the page number.
-\cleardoublepage
-% Uncomment the next line if you do NOT want a page number on your
-% abstract and acknowledgments pages.
-\pagestyle{empty}
-%\setcounter{savepage}{\thepage}
-\begin{abstractpage}
-\input{abstract}
-\end{abstractpage}
-
-% Additional copy: start a new page, and reset the page number.  This way,
-% the second copy of the abstract is not counted as separate pages.
-% Uncomment the next 6 lines if you need two copies of the abstract
-% page.
-% \setcounter{page}{\thesavepage}
-% \begin{abstractpage}
-% \input{abstract}
-% \end{abstractpage}
-
-\cleardoublepage
-
-% Delete the section below for it not to be included in the paper
-
-\section*{Acknowledgments}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nunc mi, iaculis vel arcu quis, eleifend semper dolor. Aliquam pretium consectetur dui eu accumsan. Nulla facilisi. Nunc sodales at velit vitae ultricies. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi semper et enim ut pretium. Donec sit amet metus sed nulla ullamcorper feugiat id id dui. In imperdiet neque dolor, ac imperdiet elit sagittis non. Mauris non leo at mi tempus adipiscing.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% -*-latex-*-
-\cleardoublepage

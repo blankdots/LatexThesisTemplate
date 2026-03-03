@@ -25,7 +25,7 @@ Integer malesuada ullamcorper nulla (\autoref{chap:Introduction}), in commodo ni
 
 \textbf{Aliquam} dignissim vel diam in facilisis. Morbi pulvinar massa non porttitor adipiscing. Aenean tincidunt in orci et eleifend. Sed vel gravida velit, at pretium mauris. Aenean eros magna, rhoncus eget ipsum et, accumsan dapibus elit. Donec \textit{quis ultricies tortor}, et tempus neque. Cras suscipit, lorem eget semper condimentum, tellus diam fringilla sapien, sed tempus justo arcu vel tortor.
 
-\begin{itemize}[noitemsep]
+\begin{itemize}
 	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit.;
 	\item Vivamus molestie tellus eget arcu eleifend laoreet;
 	\item Phasellus venenatis risus eleifend augue sagittis semper;
@@ -34,7 +34,7 @@ Integer malesuada ullamcorper nulla (\autoref{chap:Introduction}), in commodo ni
 \end{itemize}
 
 
-\begin{itemize}[noitemsep]
+\begin{itemize}
     \item Cras dapibus mi vitae tristique faucibus.
     \item Ut tristique leo nec erat eleifend viverra.
     \item Made by -- \url{http://blankdots.com}.
@@ -43,7 +43,9 @@ Integer malesuada ullamcorper nulla (\autoref{chap:Introduction}), in commodo ni
 
 \begin{figure}[h]
 		\centering
-		{\psfig{file = figures/sample.eps, width =6cm}}
+		\IfFileExists{figures/sample.pdf}{%
+			\includegraphics[width=6cm]{figures/sample.pdf}%
+		}{\fbox{\parbox{6cm}{\centering\small Run \texttt{epstopdf figures/sample.eps}\\ to generate the figure.}}}
 		\caption{Sample Figure.}
 		\label{fig:sample}
 \end{figure}
