@@ -36,7 +36,9 @@ Etiam vulputate elit\cite{Weiser1991} a sem lacinia commodo. Nulla vitae tellus 
 
 \begin{wrapfigure}{l}{0.5\textwidth}
   \begin{center}
-		{\psfig{file = figures/sample.eps, width = 3cm}}
+		\IfFileExists{figures/sample.pdf}{%
+			\includegraphics[width=3cm]{figures/sample.pdf}%
+		}{\fbox{\parbox{3cm}{\centering\footnotesize\raggedright Run \texttt{epstopdf} on sample.eps}}}
 		\caption{Sample In line.}
 	\end{center}
 \label{fig:InlineSample}

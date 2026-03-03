@@ -1,25 +1,26 @@
 ## LaTeX Thesis Template
 
-This template was made for a PHD thesis, but it is also intended it to be used by students from mostly from [Faculty of Computer Science, Alexandru Ioan Cuza University of Iasi, Romania](https://www.info.uaic.ro).
-The template itself is based and adapted from the MIT Thesis format available at http://web.mit.edu/thesis/tex/ .
+This template was made for a PhD thesis, but it is also intended to be used by students from the [Faculty of Computer Science, Alexandru Ioan Cuza University of Iasi, Romania](https://www.info.uaic.ro).
+The template is based on the **MIT thesis LaTeX template** (mitthesis class) from [http://web.mit.edu/thesis/tex/](http://web.mit.edu/thesis/tex/) and [CTAN](https://ctan.org/pkg/mitthesis). It uses the current 2023+ template that meets MIT Libraries formatting requirements and supports pdfLaTeX and LuaLaTeX. **TeX Live 2022 or later is required.**
 
 Students should also consult: http://profs.info.uaic.ro/~mdiac/other/licenta2010/ghid_licenta2010.pdf .
 
 ### Working with LaTeX
 
 In order to work with LaTeX and this template a specialised software could be used such as:
-* https://github.com/sharelatex/sharelatex with its online version https://www.sharelatex.com/
+* [Overleaf](https://www.overleaf.com) (online editor; ShareLaTeX is now part of Overleaf)
 * one of the software recommended by: https://www.latex-project.org/get/
-* text editor with syntax highlighting such as https://atom.io with https://atom.io/packages/language-latex
 
 ### Building the template
 
-In order to build the template you require one of the software above or pdflatex and bibtex command:
+You need **TeX Live 2022 or later** (or equivalent). Build with pdflatex and bibtex:
 
-#### pdflatex and bibtex
+1. `pdflatex main.tex` — first pass (no references yet)
+2. `bibtex main` — build bibliography
+3. `pdflatex main.tex` — second pass
+4. `pdflatex main.tex` — final pass for correct references
 
-Execute the following commands to build the main.pdf file:
-* `pdflatex main.tex` - will generate the .pdf file without any references
-* `bibtex main` - will generate the necessary files for building the references
-* `pdflatex main.tex` - will generate the complete `main.pdf` file
+**EPS figures:** The sample chapters use `figures/sample.eps`. With pdflatex, run `epstopdf figures/sample.eps` once to create `figures/sample.pdf`. If you skip this, the document still compiles but the figure appears as a placeholder.
+
+Alternatively use LuaLaTeX instead of pdflatex if you use the template’s Unicode font options.
 
