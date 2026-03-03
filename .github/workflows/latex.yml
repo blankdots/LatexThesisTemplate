@@ -6,6 +6,11 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v6
+      - name: Convert EPS figures to PDF
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y texlive-font-utils
+          for f in figures/*.eps; do [ -f "$f" ] && epstopdf "$f"; done
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v4
         with:
