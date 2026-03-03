@@ -3,7 +3,7 @@
 This template was made for a PhD thesis, but it is also intended to be used by students from the [Faculty of Computer Science, Alexandru Ioan Cuza University of Iasi, Romania](https://www.info.uaic.ro).
 The template is based on the **MIT thesis LaTeX template** (mitthesis class) from [http://web.mit.edu/thesis/tex/](http://web.mit.edu/thesis/tex/) and [CTAN](https://ctan.org/pkg/mitthesis). It uses the current 2023+ template that meets MIT Libraries formatting requirements and supports pdfLaTeX and LuaLaTeX. **TeX Live 2022 or later is required.**
 
-Students should also consult: http://profs.info.uaic.ro/~mdiac/other/licenta2010/ghid_licenta2010.pdf .
+Students should also consult: https://info.uaic.ro/lucrarea-de-licenta/ .
 
 ### Working with LaTeX
 
