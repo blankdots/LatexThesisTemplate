@@ -30,7 +30,7 @@ jobs:
       - name: Copy PDF for release asset name
         run: cp main.pdf thesis-main.pdf
       - name: Create release and upload PDF
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: thesis-main.pdf
           generate_release_notes: true
